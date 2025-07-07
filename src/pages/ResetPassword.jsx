@@ -20,7 +20,7 @@ function ResetPassword() {
       return;
     }
     try {
-      const response = await axios.post('/api/users/verify-reset-code', { code });
+      const response = await axios.post(import.meta.env.VITE_APP_base_url + '/api/users/verify-reset-code', { code });
       setMessage(response.data.message);
       setError('');
       setStep(2); // Move to password input step
@@ -37,7 +37,7 @@ function ResetPassword() {
       return;
     }
     try {
-      const response = await axios.post('/api/users/reset-password', {
+      const response = await axios.post(import.meta.env.VITE_APP_base_url + '/api/users/reset-password', {
         code,
         password,
       });
