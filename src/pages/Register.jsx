@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = ({ setUser }) => {
   const [formData, setFormData] = useState({
@@ -83,12 +83,12 @@ const Register = ({ setUser }) => {
           <div className="mb-4 text-center">
             <p className="text-gray-600 text-sm">
               Already have an account?{" "}
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="text-blue-500 hover:underline"
               >
                 Login here
-              </a>
+              </Link>
             </p>
           </div>
           <button className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 font-medium cursor-pointer">
